@@ -376,3 +376,47 @@ namespace NS_GearAttributes {
 		BELT
 	};
 }
+
+namespace NS_PotionAttributes {
+	enum class HealthPotion {
+		LIFE = 1,
+		LOVE,
+		GRACE,
+		FAVORS,
+		BLESS
+	};
+
+	enum class ManaPotion {
+		SPIRIT = 1,
+		FOREST,
+		SAGACITY,
+		WISDOM,
+		SOUL
+	};
+
+	enum class AllPotions {
+		HP_LIFE = 1,
+		HP_LOVE,
+		HP_GRACE,
+		HP_FAVORS,
+		HP_BLESS,
+		MP_SPIRIT,
+		MP_FOREST,
+		MP_SAGACITY,
+		MP_WISDOM,
+		MP_SOUL
+	};
+
+	enum class PotionPrice {
+		MP_POTION_OF_SPIRIT = 95,
+		HP_WATER_OF_LIFE = 110,
+		MP_POTION_OF_FOREST = 150,
+		HP_WATER_OF_LOVE = 155,
+		HP_WATER_OF_GRACE = 325,
+		MP_POTION_OF_SAGACITY = 410,
+		MP_POTION_OF_WISDOM = 825,
+		HP_WATER_OF_FAVORS = 1200,
+		MP_POTION_OF_SOUL = 2275,
+		HP_WATER_OF_BLESS = 2750
+	};
+}
