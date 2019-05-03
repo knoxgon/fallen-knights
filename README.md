@@ -15,12 +15,6 @@ Any of the following environments are OK
 Visual Studio Code, Visual Studio >= 2015, CLion
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 ## Authors
 
 * **Volkan Güven** - *Initial work* - [knoxgon](https://github.com/knoxgon)
