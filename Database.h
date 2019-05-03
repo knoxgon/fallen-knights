@@ -564,3 +564,60 @@ namespace NS_Zones {
 
 	};
 }
+
+namespace NS_WarpGates {
+	enum class El_Morad_Warp_Gate {
+		Folk_Village = 1,
+		Tale_Village,
+		El_Morad_Castle,
+		Lunar_Valley,
+		Delos,
+		Ardream,
+		Ronark_Land
+	};
+	enum class Karus_Warp_Gate {
+		Folk_Village = 1,
+		Tale_Village,
+		Luferson_Castle,
+		Lunar_Valley,
+		Delos,
+		Ardream,
+		Ronark_Land
+	};
+	enum class EMC_Warp_Gate {
+		Moradon = 1,
+		Asga_Village,
+		Doda_Camp,
+		Human_Eslant,
+		Kalluga_Valley,
+		Ardream,
+		Ronark_Land,
+		Laiba_Village
+	};
+	enum class Luferson_Warp_Gate {
+		Moradon = 1,
+		Belluga_Valley,
+		Raon_Camp,
+		Kalluga_Valley,
+		Orc_Eslant,
+		Ardream,
+		Ronark_Land,
+		Rabia_Village
+	};
+	enum class Ronark_Land_Warp_Gate {
+		Ronark_Land_Base = 1,
+		Moradon
+	};
+	enum class Delos_Warp_Gate {
+		Moradon = 1,
+		Hell_Abyss,
+		Forgotten_Temple,
+		Juradin_Mountain,
+		Krowazs_Dominion,
+		Felankors_Lair,
+		Bifrost
+	};
+	enum class MRDN_Warp_Gate {
+		Moradon = 1
+	};
+}
