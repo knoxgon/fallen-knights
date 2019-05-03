@@ -27,4 +27,6 @@ public:
 
 	void updateHealthPoint(int hpvalue);
 	void updateMaxHealthPoint(int maxhpvalue);
+	
+	virtual std::string toString() const;
 };
