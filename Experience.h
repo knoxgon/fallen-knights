@@ -28,4 +28,7 @@ public:
 
 	int getNextExperience(int level);
 
+	std::string convertExperienceToString(int currentLevel);
+
+	std::string toString()const;
 };
