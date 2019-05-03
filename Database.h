@@ -266,3 +266,407 @@ namespace NS_WeaponNames {
 		RARE_DAGGER_COLD__HEARTED_DAGGER
 	};
 }
+
+namespace NS_ArmorNames {
+	enum class Armor_Name {
+		FULL_PLATE_ARMOR_HELMET = 1,
+		FULL_PLATE_ARMOR_PAULDRON,
+		FULL_PLATE_ARMOR_PADS,
+		FULL_PLATE_ARMOR_GAUNTLETS,
+		FULL_PLATE_ARMOR_BOOTS,
+		TAILOR_ARMOR_HELMET,
+		TAILOR_ARMOR_PAULDRON,
+		TAILOR_ARMOR_PADS,
+		TAILOR_ARMOR_GAUNTLETS,
+		TAILOR_ARMOR_BOOTS,
+		CHITIN_HELMET,
+		CHITIN_PAULDRON,
+		CHITIN_PADS,
+		CHITIN_GAUNTLETS,
+		CHITIN_BOOTS,
+		CHITIN_SHELL_HELMET,
+		CHITIN_SHELL_PAULDRON,
+		CHITIN_SHELL_PADS,
+		CHITIN_SHELL_GAUNTLETS,
+		CHITIN_SHELL_BOOTS,
+		RARE_ARMOR_JURADINS_RAGE_HELMET,
+		RARE_ARMOR_JURADINS_RAGE_PAULDRON,
+		RARE_ARMOR_JURADINS_RAGE_PADS,
+		RARE_ARMOR_JURADINS_RAGE_GAUNTLETS,
+		RARE_ARMOR_JURADINS_RAGE_BOOTS,
+		RARE_ARMOR_KROWAZ_HELMET,
+		RARE_ARMOR_KROWAZ_PAULDRON,
+		RARE_ARMOR_KROWAZ_PADS,
+		RARE_ARMOR_KROWAZ_GAUNTLETS,
+		RARE_ARMOR_KROWAZ_BOOTS,
+		RARE_SHIELD_JURADINS_DEFENDER,
+		RARE_SHIELD_DREAD_SHIELD,
+		RARE_SHIELD_DEFENDER_OF_THE_LORD,
+		RARE_SHIELD_CHITIN_SHIELD,
+		RARE_SHIELD_GABS_BLESSING,
+		RARE_SHIELD_SCORPION_SHIELD,
+		SHIELD_PLATE_SHIELD,
+		SHIELD_OCTAGON_SHIELD,
+		SHIELD_WOODEN_SHIELD
+	};
+}
+
+namespace NS_AccessoryNames {
+	enum class Accessory_Name {
+		BOSS_BELT_SKELETON_BELT = 1,
+		BOSS_BELT_GLASS_BELT,
+		BOSS_BELT_ELF_BELT,
+		BOSS_BELT_HARPYS_BELT,
+		BOSS_BELT_STRING_OF_SKULLS,
+		BOSS_BELT_SASH_OF_SORROWS,
+		BOSS_BELT_KEKURI_BELT,
+		BOSS_BELT_ICE_BELT,
+		BOSS_BELT_JUDICIOUS_BELT,
+		BOSS_PENDANT_AMULET_OF_CURSE,
+		BOSS_PENDANT_CRYSTAL_NECKLACE,
+		BOSS_PENDANT_LYCAON_PENDANT,
+		BOSS_PENDANT_LOBO_PENDANT,
+		BOSS_PENDANT_LUPUS_PENDANT,
+		BOSS_EARRING_AGATE_EARRING,
+		BOSS_EARRING_ELF_METAL_EARRING,
+		BOSS_EARRING_MINOTAURS_EARRING,
+		BOSS_EARRING_LILLIMES_EARRING,
+		BOSS_RING_RING_OF_THE_FELANKOR,
+		BOSS_RING_FOVERING,
+		BOSS_RING_LEGIONNAIRE_BAND,
+		BOSS_RING_ARARAT_RING,
+		BOSS_RING_SHIO_TEARS,
+		BOSS_RING_IMIR_RING,
+		BOSS_RING_HEROS_VALOR
+	};
+}
+
+namespace NS_GearAttributes {
+	enum class Rarity {
+		LOW = 1,
+		MEDIUM,
+		HIGH,
+		UNIQUE_ITEM,
+		JURADIN_ITEM,
+		PREMIUM_ITEM
+	};
+	enum class WeaponClass {
+		ONE_HANDED = 1,
+		TWO_HANDED
+	};
+	enum class WeaponType {
+		SWORD = 1,
+		AXE,
+		CLUB,
+		SPEAR,
+		DAGGER
+	};
+	enum class ArmorType {
+		HELMET = 1,
+		PAULDRON,
+		PADS,
+		GAUNTLETS,
+		BOOTS,
+		SHIELD
+	};
+	enum class AccessoryType {
+		PENDANT = 1,
+		EARRING,
+		RING,
+		BELT
+	};
+}
+
+namespace NS_PotionAttributes {
+	enum class HealthPotion {
+		LIFE = 1,
+		LOVE,
+		GRACE,
+		FAVORS,
+		BLESS
+	};
+
+	enum class ManaPotion {
+		SPIRIT = 1,
+		FOREST,
+		SAGACITY,
+		WISDOM,
+		SOUL
+	};
+
+	enum class AllPotions {
+		HP_LIFE = 1,
+		HP_LOVE,
+		HP_GRACE,
+		HP_FAVORS,
+		HP_BLESS,
+		MP_SPIRIT,
+		MP_FOREST,
+		MP_SAGACITY,
+		MP_WISDOM,
+		MP_SOUL
+	};
+
+	enum class PotionPrice {
+		MP_POTION_OF_SPIRIT = 95,
+		HP_WATER_OF_LIFE = 110,
+		MP_POTION_OF_FOREST = 150,
+		HP_WATER_OF_LOVE = 155,
+		HP_WATER_OF_GRACE = 325,
+		MP_POTION_OF_SAGACITY = 410,
+		MP_POTION_OF_WISDOM = 825,
+		HP_WATER_OF_FAVORS = 1200,
+		MP_POTION_OF_SOUL = 2275,
+		HP_WATER_OF_BLESS = 2750
+	};
+}
+
+namespace NS_LuneItems {
+	enum class LUNE {
+		BAR_GOLD = 100000000,
+		BAR_SILVER = 10000000,
+		COIN_GOLD = 1000000,
+		COIN_SILVER = 100000,
+		COIN_BRONZE = 10000,
+		CURSED_BONE = 8000,
+		NAGA_FRUIT = 30000,
+		JEWELRY = 5000,
+		WORM_SILK = 50,
+		BANDICOOT_PAW = 75,
+		KEKURI_ARMOR_SCRAP = 95,
+		FEATHER_OF_HARPY = 3000,
+		VULTURE_JAW = 225,
+		WOLF_TEETH = 500,
+		SKELETON_EYE = 1000,
+		SKELETON_BONE = 15000,
+		TROLLS_TOTEM = 7500,
+		ORC_TALISMAN = 750,
+		REVERED_STONE_OF_HAUNGA = 400,
+		GLOOM_WING = 540,
+		HOUNDS_HEAD = 1200,
+		PINCER_LURK = 300,
+		SHADOW_INK = 265,
+		PHANTOM_OF_DEVIL = 800,
+		LEECH_OZZY = 950,
+		TREE_ROOT = 330
+	};
+}
+
+namespace NS_UpgradeAttr {
+	enum class Scroll {
+		LOW_UPGRADE_SCROLL = 550000,
+		MIDDLE_UPGRADE_SCROLL = 1540000,
+		BLESSED_UPGRADE_SCROLL = 7520000,
+		TRINA = 45000000,
+		TEARS_OF_KARIVDIS = 70000000
+	};
+}
+
+namespace NS_BossTypes {
+	enum class EliteBossTypes {
+		Snake_Queen = 1,
+		Deruvish_Founder,
+		Talos,
+		Harpy_Queen,
+		Hellfire,
+		Troll_King,
+		Orc_Bandit_Leader,
+		Volcanic_Rock,
+		Dark_Stone,
+		Flame_Rock
+	};
+	enum class SupremeBossTypes {
+		Samma = 1,
+		Riote,
+		Atross,
+		Shaula,
+		Havoc,
+		Lesath,
+		Dragon_Tooth,
+	};
+	enum class MajorBossTypes {
+		Javana = 1,
+		Duke,
+		Bishop,
+		Bach,
+		Acer,
+		Bone_Collector,
+		Barrkk,
+		Barkirra,
+		Lycaon,
+		Lobo,
+		Lupus
+	};
+	enum class MinorBossTypes {
+		Kekurikekukaka = 1,
+		Antares,
+		Hyde
+	};
+}
+
+namespace NS_Zones {
+	enum class AllZones {
+		Ardream,
+		Ronark_Land,
+		Moradon,
+		MRDN_Folk_Village,
+		MRDN_Tale_Village,
+		MRDN_EMC_El_Morad_Castle,
+		MRDN_LFRSN_Luferson_Castle,
+		MRDN_Lunar_Valley,
+		MRDN_Delos,
+		EMC_Asga_Village,
+		EMC_Doda_Camp,
+		EMC_Human_Eslant,
+		EMC_Kalluga_Valley,
+		EMC_Laiba_Village,
+		LFRSN_Belluga_Valley,
+		LFRSN_Raon_Camp,
+		LFRSN_Orc_Eslant,
+		LFRSN_Rabia_Village,
+		RON_Ronark_Land_Base,
+		DELOS_Hell_Abyss,
+		DELOS_Forgotten_Temple,
+		DELOS_Juradin_Mountain,
+		DELOS_Krowazs_Dominion,
+		DELOS_Felankors_Lair,
+		DELOS_Bifrost
+	};
+
+	enum class ElMoradZones {
+		El_Morad_Castle = 917,
+		Ardream,
+		Human_Estland,
+		Asga_Village,
+		Doda_Camp,
+		Laiba_Village,
+		Moradon,
+		Ronark_Land
+	};
+
+	enum class KarusZones {
+		Luferson_Castle = 8742,
+		Ardream,
+		Orc_Eslant,
+		Belluga_Valley,
+		Raon_Camp,
+		Rabia_Village,
+		Moradon,
+		Ronark_Land
+	};
+
+	enum class MoradonZones {
+		Luferson_Castle = 303,
+		El_Morad_Castle,
+		Ardream,
+		Moradon,
+		Folk_Village,
+
+	};
+}
+
+namespace NS_WarpGates {
+	enum class El_Morad_Warp_Gate {
+		Folk_Village = 1,
+		Tale_Village,
+		El_Morad_Castle,
+		Lunar_Valley,
+		Delos,
+		Ardream,
+		Ronark_Land
+	};
+	enum class Karus_Warp_Gate {
+		Folk_Village = 1,
+		Tale_Village,
+		Luferson_Castle,
+		Lunar_Valley,
+		Delos,
+		Ardream,
+		Ronark_Land
+	};
+	enum class EMC_Warp_Gate {
+		Moradon = 1,
+		Asga_Village,
+		Doda_Camp,
+		Human_Eslant,
+		Kalluga_Valley,
+		Ardream,
+		Ronark_Land,
+		Laiba_Village
+	};
+	enum class Luferson_Warp_Gate {
+		Moradon = 1,
+		Belluga_Valley,
+		Raon_Camp,
+		Kalluga_Valley,
+		Orc_Eslant,
+		Ardream,
+		Ronark_Land,
+		Rabia_Village
+	};
+	enum class Ronark_Land_Warp_Gate {
+		Ronark_Land_Base = 1,
+		Moradon
+	};
+	enum class Delos_Warp_Gate {
+		Moradon = 1,
+		Hell_Abyss,
+		Forgotten_Temple,
+		Juradin_Mountain,
+		Krowazs_Dominion,
+		Felankors_Lair,
+		Bifrost
+	};
+	enum class MRDN_Warp_Gate {
+		Moradon = 1
+	};
+}
+
+namespace NS_PowerUpStoreItems {
+	enum class PremiumCards {
+		EXP_PREMIUM = 1,
+		DISC_PREMIUM,
+		WAR_PREMIUM,
+		PLATINUM_PREMIUM,
+		GOLD_PREMIUM,
+		BRONZE_PREMIUM
+	};
+	enum class UpgradeItems {
+		TRINAS_PIECE = 1,
+		SHADOW_PIECE
+	};
+	enum class Scrolls {
+		DEFENSESCROLL_150 = 1,
+		DEFENSESCROLL_300,
+		DEFENSESCROLL_350,
+		HEALTHSCROLL_500,
+		HEALTHSCROLL_1000,
+		HEALTHSCROLL_1500,
+		ATTACKDAMAGE,
+		POWEROFLIONS_10_STATS,
+		STR_SCROLL_15_STATS,
+		INT_SCROLL_15_STATS,
+		END_SCROLL_15_STATS
+	};
+	enum class Gloves {
+		VOUCHER_OF_PATHOS = 1,
+		MINERVA_PACKAGE
+	};
+	enum class Helmets {
+		VALKYRIE_HELMET = 1,
+		GRYPHON_HELMET,
+		BAHAMUT_HELMET
+	};
+	enum class Armor_Certificates {
+		VALKYRIE_ARMOR_CERTIFICATE = 1,
+		GRYPHON_ARMOR_CERTIFICATE,
+		BAHAMUT_ARMOR_CERTIFICATE
+	};
+}
+
+namespace NS_TITLE {
+	enum class Title {
+		Inventory = 1,
+		DropItems
+	};
+}
