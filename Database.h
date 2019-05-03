@@ -621,3 +621,45 @@ namespace NS_WarpGates {
 		Moradon = 1
 	};
 }
+
+namespace NS_PowerUpStoreItems {
+	enum class PremiumCards {
+		EXP_PREMIUM = 1,
+		DISC_PREMIUM,
+		WAR_PREMIUM,
+		PLATINUM_PREMIUM,
+		GOLD_PREMIUM,
+		BRONZE_PREMIUM
+	};
+	enum class UpgradeItems {
+		TRINAS_PIECE = 1,
+		SHADOW_PIECE
+	};
+	enum class Scrolls {
+		DEFENSESCROLL_150 = 1,
+		DEFENSESCROLL_300,
+		DEFENSESCROLL_350,
+		HEALTHSCROLL_500,
+		HEALTHSCROLL_1000,
+		HEALTHSCROLL_1500,
+		ATTACKDAMAGE,
+		POWEROFLIONS_10_STATS,
+		STR_SCROLL_15_STATS,
+		INT_SCROLL_15_STATS,
+		END_SCROLL_15_STATS
+	};
+	enum class Gloves {
+		VOUCHER_OF_PATHOS = 1,
+		MINERVA_PACKAGE
+	};
+	enum class Helmets {
+		VALKYRIE_HELMET = 1,
+		GRYPHON_HELMET,
+		BAHAMUT_HELMET
+	};
+	enum class Armor_Certificates {
+		VALKYRIE_ARMOR_CERTIFICATE = 1,
+		GRYPHON_ARMOR_CERTIFICATE,
+		BAHAMUT_ARMOR_CERTIFICATE
+	};
+}
