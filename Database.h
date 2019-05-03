@@ -663,3 +663,10 @@ namespace NS_PowerUpStoreItems {
 		BAHAMUT_ARMOR_CERTIFICATE
 	};
 }
+
+namespace NS_TITLE {
+	enum class Title {
+		Inventory = 1,
+		DropItems
+	};
+}
