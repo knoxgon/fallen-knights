@@ -451,3 +451,13 @@ namespace NS_LuneItems {
 		TREE_ROOT = 330
 	};
 }
+
+namespace NS_UpgradeAttr {
+	enum class Scroll {
+		LOW_UPGRADE_SCROLL = 550000,
+		MIDDLE_UPGRADE_SCROLL = 1540000,
+		BLESSED_UPGRADE_SCROLL = 7520000,
+		TRINA = 45000000,
+		TEARS_OF_KARIVDIS = 70000000
+	};
+}
