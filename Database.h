@@ -503,3 +503,64 @@ namespace NS_BossTypes {
 		Hyde
 	};
 }
+
+namespace NS_Zones {
+	enum class AllZones {
+		Ardream,
+		Ronark_Land,
+		Moradon,
+		MRDN_Folk_Village,
+		MRDN_Tale_Village,
+		MRDN_EMC_El_Morad_Castle,
+		MRDN_LFRSN_Luferson_Castle,
+		MRDN_Lunar_Valley,
+		MRDN_Delos,
+		EMC_Asga_Village,
+		EMC_Doda_Camp,
+		EMC_Human_Eslant,
+		EMC_Kalluga_Valley,
+		EMC_Laiba_Village,
+		LFRSN_Belluga_Valley,
+		LFRSN_Raon_Camp,
+		LFRSN_Orc_Eslant,
+		LFRSN_Rabia_Village,
+		RON_Ronark_Land_Base,
+		DELOS_Hell_Abyss,
+		DELOS_Forgotten_Temple,
+		DELOS_Juradin_Mountain,
+		DELOS_Krowazs_Dominion,
+		DELOS_Felankors_Lair,
+		DELOS_Bifrost
+	};
+
+	enum class ElMoradZones {
+		El_Morad_Castle = 917,
+		Ardream,
+		Human_Estland,
+		Asga_Village,
+		Doda_Camp,
+		Laiba_Village,
+		Moradon,
+		Ronark_Land
+	};
+
+	enum class KarusZones {
+		Luferson_Castle = 8742,
+		Ardream,
+		Orc_Eslant,
+		Belluga_Valley,
+		Raon_Camp,
+		Rabia_Village,
+		Moradon,
+		Ronark_Land
+	};
+
+	enum class MoradonZones {
+		Luferson_Castle = 303,
+		El_Morad_Castle,
+		Ardream,
+		Moradon,
+		Folk_Village,
+
+	};
+}
