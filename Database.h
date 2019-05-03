@@ -340,3 +340,39 @@ namespace NS_AccessoryNames {
 		BOSS_RING_HEROS_VALOR
 	};
 }
+
+namespace NS_GearAttributes {
+	enum class Rarity {
+		LOW = 1,
+		MEDIUM,
+		HIGH,
+		UNIQUE_ITEM,
+		JURADIN_ITEM,
+		PREMIUM_ITEM
+	};
+	enum class WeaponClass {
+		ONE_HANDED = 1,
+		TWO_HANDED
+	};
+	enum class WeaponType {
+		SWORD = 1,
+		AXE,
+		CLUB,
+		SPEAR,
+		DAGGER
+	};
+	enum class ArmorType {
+		HELMET = 1,
+		PAULDRON,
+		PADS,
+		GAUNTLETS,
+		BOOTS,
+		SHIELD
+	};
+	enum class AccessoryType {
+		PENDANT = 1,
+		EARRING,
+		RING,
+		BELT
+	};
+}
