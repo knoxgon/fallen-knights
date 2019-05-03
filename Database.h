@@ -461,3 +461,45 @@ namespace NS_UpgradeAttr {
 		TEARS_OF_KARIVDIS = 70000000
 	};
 }
+
+namespace NS_BossTypes {
+	enum class EliteBossTypes {
+		Snake_Queen = 1,
+		Deruvish_Founder,
+		Talos,
+		Harpy_Queen,
+		Hellfire,
+		Troll_King,
+		Orc_Bandit_Leader,
+		Volcanic_Rock,
+		Dark_Stone,
+		Flame_Rock
+	};
+	enum class SupremeBossTypes {
+		Samma = 1,
+		Riote,
+		Atross,
+		Shaula,
+		Havoc,
+		Lesath,
+		Dragon_Tooth,
+	};
+	enum class MajorBossTypes {
+		Javana = 1,
+		Duke,
+		Bishop,
+		Bach,
+		Acer,
+		Bone_Collector,
+		Barrkk,
+		Barkirra,
+		Lycaon,
+		Lobo,
+		Lupus
+	};
+	enum class MinorBossTypes {
+		Kekurikekukaka = 1,
+		Antares,
+		Hyde
+	};
+}
