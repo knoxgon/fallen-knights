@@ -202,3 +202,36 @@ void Armor::setDefense(int def)
 		this->defense = def + (this->getItemLevel() * 8);
 }
 
+void Armor::operateDefenseBonus(int def)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setDefenseBonus(def);
+	if (this->getItemLevel() == 8) {
+		if (def > 0)
+			this->getBonusStat()->setDefenseBonus(def + ((this->getItemLevel() * 2) + 30));
+		else if (def < 0)
+			this->getBonusStat()->setDefenseBonus(def - ((this->getItemLevel() * 2) + 30));
+	}
+	if (this->getItemLevel() == 9) {
+		if (def > 0)
+			this->getBonusStat()->setDefenseBonus(def + ((this->getItemLevel() * 2) + 40));
+		else if (def < 0)
+			this->getBonusStat()->setDefenseBonus(def - ((this->getItemLevel() * 2) + 40));
+	}
+	if (this->getItemLevel() == 10) {
+		if (def > 0)
+			this->getBonusStat()->setDefenseBonus(def + ((this->getItemLevel() * 2) + 50));
+		else if (def < 0)
+			this->getBonusStat()->setDefenseBonus(def - ((this->getItemLevel() * 2) + 50));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (def > 0)
+					this->getBonusStat()->setDefenseBonus(def + ((i * 2) + 20));
+				else if (def < 0)
+					this->getBonusStat()->setDefenseBonus(def - ((i * 2) + 20));
+			}
+		}
+	}
+}
