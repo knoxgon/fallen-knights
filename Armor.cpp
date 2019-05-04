@@ -235,3 +235,37 @@ void Armor::operateDefenseBonus(int def)
 		}
 	}
 }
+
+void Armor::operateHealthBonus(int hp)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setHealthBonus(hp);
+	if (this->getItemLevel() == 8) {
+		if (hp > 0)
+			this->getBonusStat()->setHealthBonus(hp + ((this->getItemLevel() * this->getItemLevel()) + 75));
+		else if (hp < 0)
+			this->getBonusStat()->setHealthBonus(hp - ((this->getItemLevel() * this->getItemLevel()) + 75));
+	}
+	if (this->getItemLevel() == 9) {
+		if (hp > 0)
+			this->getBonusStat()->setHealthBonus(hp + ((this->getItemLevel() * this->getItemLevel()) + 175));
+		else if (hp < 0)
+			this->getBonusStat()->setHealthBonus(hp - ((this->getItemLevel() * this->getItemLevel()) + 175));
+	}
+	if (this->getItemLevel() == 10) {
+		if (hp > 0)
+			this->getBonusStat()->setHealthBonus(hp + ((this->getItemLevel() * this->getItemLevel()) + 325));
+		else if (hp < 0)
+			this->getBonusStat()->setHealthBonus(hp - ((this->getItemLevel() * this->getItemLevel()) + 325));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (hp > 0)
+					this->getBonusStat()->setHealthBonus(hp + ((this->getItemLevel() * this->getItemLevel()) + 50));
+				else if (hp < 0)
+					this->getBonusStat()->setHealthBonus(hp - ((this->getItemLevel() * this->getItemLevel()) + 50));
+			}
+		}
+	}
+}
