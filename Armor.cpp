@@ -405,3 +405,37 @@ void Armor::operateEnduranceBonus(int end)
 		}
 	}
 }
+
+void Armor::operateAttackPowerBonus(int ap)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setAttackPowerBonus(ap);
+	if (this->getItemLevel() == 8) {
+		if (ap > 0)
+			this->getBonusStat()->setAttackPowerBonus(ap + ((this->getItemLevel() * 2) + 10));
+		else if (ap < 0)
+			this->getBonusStat()->setAttackPowerBonus(ap - ((this->getItemLevel() * 2) + 10));
+	}
+	if (this->getItemLevel() == 9) {
+		if (ap > 0)
+			this->getBonusStat()->setAttackPowerBonus(ap + ((this->getItemLevel() * 2) + 20));
+		else if (ap < 0)
+			this->getBonusStat()->setAttackPowerBonus(ap - ((this->getItemLevel() * 2) + 20));
+	}
+	if (this->getItemLevel() == 10) {
+		if (ap > 0)
+			this->getBonusStat()->setAttackPowerBonus(ap + ((this->getItemLevel() * 2) + 25));
+		else if (ap < 0)
+			this->getBonusStat()->setAttackPowerBonus(ap - ((this->getItemLevel() * 2) + 25));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (ap > 0)
+					this->getBonusStat()->setAttackPowerBonus(ap + ((i * 2) + 5));
+				else if (ap < 0)
+					this->getBonusStat()->setAttackPowerBonus(ap - ((i * 2) + 5));
+			}
+		}
+	}
+}
