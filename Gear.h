@@ -66,4 +66,33 @@ public:
 	virtual void updateRequiredStrength(int str);
 	virtual void updateRequiredIntelligence(int intel);
 	virtual void updateRequiredEndurance(int end);
+
+	virtual int getCurrentDurability()const;
+	virtual int getMaxDurability() const;
+	
+	virtual int getOriginalCurrentDurability()const;
+	virtual int getOriginalMaxDurability() const;
+
+	virtual int getRequiredStrength() const;
+	virtual int getRequiredIntelligence()const;
+	virtual int getRequiredEndurance() const;
+
+	virtual int getOriginalRequiredStrength() const;
+	virtual int getOriginalRequiredIntelligence()const;
+	virtual int getOriginalRequiredEndurance() const;
+
+
+	virtual std::string displaySimple()const;
+
+	virtual std::string getRarity()const;
+	virtual NS_GearAttributes::Rarity ns_getRarity()const;
+
+	virtual void setGearName(std::string gearName);
+	virtual std::string getGearName()const;
+
+	virtual void setGearType(std::string gearType);
+	virtual std::string getGearType()const;
+
+	virtual int getItemLevel()const;
+
 };
