@@ -28,5 +28,37 @@ public:
 
 	BonusStats& operator=(BonusStats& other);
 
+	void setDefenseBonus(int def);
+	void setHealthBonus(int hp);
+	void setManaBonus(int mp);
+	void setStrengthBonus(int str);
+	void setIntelligenceBonus(int intel);
+	void setEnduranceBonus(int end);
+	void setAttackPowerBonus(int ap);
+
+	void updateDefenseBonus(int def);
+	void updateHealthBonus(int hp);
+	void updateManaBonus(int mp);
+	void updateStrengthBonus(int str);
+	void updateIntelligenceBonus(int intel);
+	void updateEnduranceBonus(int end);
+	void updateAttackPowerBonus(int ap);
+
+	int getDefenseBonus()const;
+	int getHealthBonus()const;
+	int getManaBonus()const;
+	int getStrengthBonus()const;
+	int getIntelligenceBonus()const;
+	int getEnduranceBonus()const;
+	int getAttackPowerBonus()const;
+
+	int getOriginalDefenseBonus()const;
+	int getOriginalHealthBonus()const;
+	int getOriginalManaBonus()const;
+	int getOriginalStrengthBonus()const;
+	int getOriginalIntelligenceBonus()const;
+	int getOriginalEnduranceBonus()const;
+	int getOriginalAttackPowerBonus()const;
+
 };
 
