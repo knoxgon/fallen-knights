@@ -651,3 +651,269 @@ NS_GearAttributes::WeaponType Weapon::getWeaponType_ns() const
 {
 	return this->g_wep_type;
 }
+
+void Weapon::retrieveGear() const
+{
+	std::vector<std::string> maxim;
+	if (this->getItemLevel() > 0)
+		maxim.push_back(" " + this->getGearName() + "(+" + std::to_string(this->getItemLevel()) + ")");
+	else
+		maxim.push_back(" " + this->getGearName());
+	maxim.push_back(" " + this->getWeaponClass());
+	maxim.push_back(" " + this->getGearType());
+	maxim.push_back(" Attack Power: " + std::to_string(this->getAttackPower()));
+	if (this->getRequiredStrength() > 0)
+		maxim.push_back(" Required strength: " + std::to_string(this->getRequiredStrength()));
+	if (this->getRequiredIntelligence() > 0)
+		maxim.push_back(" Required intelligence: " + std::to_string(this->getRequiredIntelligence()));
+	if (this->getRequiredEndurance() > 0)
+		maxim.push_back(" Required endurance: " + std::to_string(this->getRequiredEndurance()));
+	maxim.push_back(" " + this->getGearName());
+	if (this->getCurrentDurability() > 0 && this->getMaxDurability() > 0)
+		maxim.push_back(" Durability: " + std::to_string(this->getCurrentDurability()) + "/" +
+			std::to_string(this->getMaxDurability()));
+	maxim.push_back(" (" + this->getRarity() + ")");
+	if (this->getBonusStat() != nullptr) {
+		if (this->getBonusStat()->getAttackPowerBonus() != 0)
+			maxim.push_back("Attack Power Bonus: " + std::to_string(this->getBonusStat()->getAttackPowerBonus()));
+		if (this->getBonusStat()->getDefenseBonus() != 0)
+			maxim.push_back(" Defense bonus: " + std::to_string(this->getBonusStat()->getDefenseBonus()));
+		if (this->getBonusStat()->getHealthBonus() != 0)
+			maxim.push_back(" Health bonus: " + std::to_string(this->getBonusStat()->getHealthBonus()));
+		if (this->getBonusStat()->getManaBonus() != 0)
+			maxim.push_back(" Mana bonus: " + std::to_string(this->getBonusStat()->getManaBonus()));
+		if (this->getBonusStat()->getStrengthBonus() != 0)
+			maxim.push_back(" Strength bonus: " + std::to_string(this->getBonusStat()->getStrengthBonus()));
+		if (this->getBonusStat()->getIntelligenceBonus() != 0)
+			maxim.push_back(" Intelligence bonus: " + std::to_string(this->getBonusStat()->getIntelligenceBonus()));
+		if (this->getBonusStat()->getEnduranceBonus() != 0)
+			maxim.push_back(" Endurance bonus: " + std::to_string(this->getBonusStat()->getEnduranceBonus()));
+	}
+
+	std::vector<std::string>::iterator& longest = std::max_element(maxim.begin(), maxim.end(), UsefulLibrary::KOLibrary::compare_length);
+	std::string longest_line = *longest;
+
+	int size = longest_line.size();
+	std::string wall(size + 3, '*');
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+		std::cout << wall << "\n";
+
+	if (this->getItemLevel() > 0) {
+		std::string nameWall((size + 1) - (" " + this->getGearName() + "(+" + std::to_string(this->getItemLevel()) + ")").size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		if (this->ns_getRarity() == NS_GearAttributes::Rarity::UNIQUE_ITEM) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14),
+				std::cout << this->getGearName() << "(+" << std::to_string(this->getItemLevel()) << ")";
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::JURADIN_ITEM) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12),
+				std::cout << this->getGearName() << "(+" << std::to_string(this->getItemLevel()) << ")";
+		}
+		else if(this->ns_getRarity() == NS_GearAttributes::Rarity::HIGH){
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9),
+				std::cout << this->getGearName() << "(+" << std::to_string(this->getItemLevel()) << ")";
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::MEDIUM) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2),
+				std::cout << this->getGearName() << "(+" << std::to_string(this->getItemLevel()) << ")";
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::LOW) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 8),
+				std::cout << this->getGearName() << "(+" << std::to_string(this->getItemLevel()) << ")";
+		}
+		else {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15),
+				std::cout << this->getGearName() << "(+" << std::to_string(this->getItemLevel()) << ")";
+		}
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << nameWall << "*\n";
+	}
+	else {
+		std::string nameWall((size + 1) - (" " + this->getGearName()).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		if (this->ns_getRarity() == NS_GearAttributes::Rarity::UNIQUE_ITEM) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14),
+				std::cout << this->getGearName();
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::JURADIN_ITEM) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12),
+				std::cout << this->getGearName();
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::HIGH) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9),
+				std::cout << this->getGearName();
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::MEDIUM) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2),
+				std::cout << this->getGearName();
+		}
+		else if (this->ns_getRarity() == NS_GearAttributes::Rarity::LOW) {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 8),
+				std::cout << this->getGearName();
+		}
+		else {
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15),
+				std::cout << this->getGearName();
+		}
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << nameWall << "*\n";
+	}
+	std::string rarityWall((size + 1) - (" (" + this->getRarity() + ")").size(), ' ');
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+		std::cout << "* ";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2),
+		std::cout << "(" << this->getRarity() + ")";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+		std::cout << rarityWall << "*\n";
+
+	if (this->g_wep_type != NS_GearAttributes::WeaponType::DAGGER) {
+		std::string typeClassWall((size + 1) - (" " + this->getWeaponClass() + " " + this->getGearType()).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3),
+			std::cout << this->getWeaponClass() + " " + this->getGearType();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << typeClassWall << "*\n";
+		std::string spaceSize((size + 1), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "*" << spaceSize << "*\n";
+	}
+	else {
+		std::string typeClassWall((size + 1) - (" " + this->getGearType()).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3),
+			std::cout << this->getGearType();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << typeClassWall << "*\n";
+		std::string spaceSize((size + 1), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "*" << spaceSize << "*\n";
+	}
+
+	if (this->getAttackPower() > 0) {
+		std::string apWall((size + 1) - (" Attack Power: " + std::to_string(this->getAttackPower())).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12),
+			std::cout << "Attack Power: " << std::to_string(this->getAttackPower());
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << apWall << "*\n";
+	}
+	if (this->getCurrentDurability() > 0 && this->getMaxDurability() > 0) {
+		std::string durWall((size + 1) - (" Durability: " + std::to_string(this->getCurrentDurability()) + "/" +
+			std::to_string(this->getMaxDurability())).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14),
+			std::cout << "Durability: " << std::to_string(this->getCurrentDurability()) << "/" << std::to_string(this->getMaxDurability());
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << durWall << "*\n";
+	}
+
+	if (this->getBonusStat() != nullptr) {
+		if (this->getBonusStat()->getAttackPowerBonus() != 0) {
+			std::string wallAttBon((size + 1) -
+				(" Attack Power Bonus: " + std::to_string(this->getBonusStat()->getAttackPowerBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Attack Power Bonus: " + std::to_string(this->getBonusStat()->getAttackPowerBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallAttBon << "*\n";
+		}
+		if (this->getBonusStat()->getDefenseBonus() != 0) {
+			std::string wallDefBon((size + 1) -
+				(" Defense bonus: " + std::to_string(this->getBonusStat()->getDefenseBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Defense bonus: " << std::to_string(this->getBonusStat()->getDefenseBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallDefBon << "*\n";
+		}
+		if (this->getBonusStat()->getHealthBonus() != 0) {
+			std::string wallHealhBon((size + 1) -
+				(" Health bonus: " + std::to_string(this->getBonusStat()->getHealthBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Health bonus: " << std::to_string(this->getBonusStat()->getHealthBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallHealhBon << "*\n";
+		}
+		if (this->getBonusStat()->getManaBonus() != 0) {
+			std::string wallManaBon((size + 1) -
+				(" Mana bonus: " + std::to_string(this->getBonusStat()->getManaBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Mana bonus: " << std::to_string(this->getBonusStat()->getManaBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallManaBon << "*\n";
+		}
+		if (this->getBonusStat()->getStrengthBonus() != 0) {
+			std::string wallStrBon((size + 1) -
+				(" Strength bonus: " + std::to_string(this->getBonusStat()->getStrengthBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Strength bonus: " << std::to_string(this->getBonusStat()->getStrengthBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallStrBon << "*\n";
+		}
+		if (this->getBonusStat()->getIntelligenceBonus() != 0) {
+			std::string wallIntBon((size + 1) -
+				(" Intelligence bonus: " + std::to_string(this->getBonusStat()->getIntelligenceBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Intelligence bonus: " << std::to_string(this->getBonusStat()->getIntelligenceBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallIntBon << "*\n";
+		}
+		if (this->getBonusStat()->getEnduranceBonus() != 0) {
+			std::string wallEndBon((size + 1) -
+				(" Endurance bonus: " + std::to_string(this->getBonusStat()->getEnduranceBonus())).size(), ' ');
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << "* ";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10),
+				std::cout << "Endurance bonus: " << std::to_string(this->getBonusStat()->getEnduranceBonus());
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+				std::cout << wallEndBon << "*\n";
+		}
+	}
+
+	if (this->getRequiredStrength() > 0) {
+		std::string strWall((size + 1) - (" Required strength: " + std::to_string(this->getRequiredStrength())).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11),
+			std::cout << "Required strength: " << std::to_string(this->getRequiredStrength());
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << strWall << "*\n";
+	}
+	if (this->getRequiredIntelligence() > 0) {
+		std::string intWall((size + 1) - (" Required intelligence: " + std::to_string(this->getRequiredIntelligence())).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11),
+			std::cout << "Required intelligence: " << std::to_string(this->getRequiredIntelligence());
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << intWall << "*\n";
+	}
+	if (this->getRequiredEndurance() > 0) {
+		std::string endWall((size + 1) - (" Required endurance: " + std::to_string(this->getRequiredEndurance())).size(), ' ');
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << "* ";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11),
+			std::cout << "Required endurance: " << std::to_string(this->getRequiredEndurance());
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+			std::cout << endWall << "*\n";
+	}
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7),
+		std::cout << wall << '\n';
+}
