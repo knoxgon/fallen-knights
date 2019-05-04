@@ -156,3 +156,6 @@ void Armor::setArmorName(NS_ArmorNames::Armor_Name g_armorName)
 	this->g_armorName = g_armorName;
 }
 
+bool Armor::operator==(const Armor& rhs) {
+	return this->g_armorName == rhs.g_armorName;
+}
