@@ -439,3 +439,28 @@ void Armor::operateAttackPowerBonus(int ap)
 		}
 	}
 }
+
+int Armor::getDefense() const
+{
+	return this->defense;
+}
+
+int Armor::getOriginalDefense() const
+{
+	return this->originalDefense;
+}
+
+NS_ArmorNames::Armor_Name Armor::getGearName_ns() const
+{
+	return this->g_armorName;
+}
+
+NS_GearAttributes::ArmorType Armor::getArmorType_ns() const
+{
+	return this->g_armorType;
+}
+
+void Armor::updateDefense(int def)
+{
+	this->defense += def;
+}
