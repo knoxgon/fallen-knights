@@ -303,3 +303,105 @@ void Armor::operateManaBonus(int mp)
 		}
 	}
 }
+
+void Armor::operateStrengthBonus(int str)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setStrengthBonus(str);
+	if (this->getItemLevel() == 8) {
+		if (str > 0)
+			this->getBonusStat()->setStrengthBonus(str + ((this->getItemLevel() * (this->getItemLevel())) + 10));
+		else if (str < 0)
+			this->getBonusStat()->setStrengthBonus(str - ((this->getItemLevel() * (this->getItemLevel())) + 10));
+	}
+	if (this->getItemLevel() == 9) {
+		if (str > 0)
+			this->getBonusStat()->setStrengthBonus(str + ((this->getItemLevel() * (this->getItemLevel())) + 20));
+		else if (str < 0)
+			this->getBonusStat()->setStrengthBonus(str - ((this->getItemLevel() * (this->getItemLevel())) + 20));
+	}
+	if (this->getItemLevel() == 10) {
+		if (str > 0)
+			this->getBonusStat()->setStrengthBonus(str + ((this->getItemLevel() * (this->getItemLevel())) + 50));
+		else if (str < 0)
+			this->getBonusStat()->setStrengthBonus(str - ((this->getItemLevel() * (this->getItemLevel())) + 50));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (str > 0)
+					this->getBonusStat()->setStrengthBonus(str + (((this->getItemLevel() + (this->getItemLevel())) + i) + 5));
+				else if (str < 0)
+					this->getBonusStat()->setStrengthBonus(str - (((this->getItemLevel() + (this->getItemLevel())) + i) + 5));
+			}
+		}
+	}
+}
+
+void Armor::operateIntelligenceBonus(int intel)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setIntelligenceBonus(intel);
+	if (this->getItemLevel() == 8) {
+		if (intel > 0)
+			this->getBonusStat()->setIntelligenceBonus(intel + ((this->getItemLevel() * (this->getItemLevel())) + 10));
+		else if (intel < 0)
+			this->getBonusStat()->setIntelligenceBonus(intel - ((this->getItemLevel() * (this->getItemLevel())) + 10));
+	}
+	if (this->getItemLevel() == 9) {
+		if (intel > 0)
+			this->getBonusStat()->setIntelligenceBonus(intel + ((this->getItemLevel() * (this->getItemLevel())) + 20));
+		else if (intel < 0)
+			this->getBonusStat()->setIntelligenceBonus(intel - ((this->getItemLevel() * (this->getItemLevel())) + 20));
+	}
+	if (this->getItemLevel() == 10) {
+		if (intel > 0)
+			this->getBonusStat()->setIntelligenceBonus(intel + ((this->getItemLevel() * (this->getItemLevel())) + 50));
+		else if (intel < 0)
+			this->getBonusStat()->setIntelligenceBonus(intel - ((this->getItemLevel() * (this->getItemLevel())) + 50));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (intel > 0)
+					this->getBonusStat()->setIntelligenceBonus(intel + (((this->getItemLevel() + (this->getItemLevel())) + i) + 5));
+				else if (intel < 0)
+					this->getBonusStat()->setIntelligenceBonus(intel - (((this->getItemLevel() + (this->getItemLevel())) + i) + 5));
+			}
+		}
+	}
+}
+
+void Armor::operateEnduranceBonus(int end)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setEnduranceBonus(end);
+	if (this->getItemLevel() == 8) {
+		if (end > 0)
+			this->getBonusStat()->setEnduranceBonus(end + ((this->getItemLevel() * (this->getItemLevel())) + 30));
+		else if (end < 0)
+			this->getBonusStat()->setEnduranceBonus(end - ((this->getItemLevel() * (this->getItemLevel())) + 30));
+	}
+	if (this->getItemLevel() == 9) {
+		if (end > 0)
+			this->getBonusStat()->setEnduranceBonus(end + ((this->getItemLevel() * (this->getItemLevel())) + 50));
+		else if (end < 0)
+			this->getBonusStat()->setEnduranceBonus(end - ((this->getItemLevel() * (this->getItemLevel())) + 50));
+	}
+	if (this->getItemLevel() == 10) {
+		if (end > 0)
+			this->getBonusStat()->setEnduranceBonus(end + ((this->getItemLevel() * (this->getItemLevel())) + 100));
+		else if (end < 0)
+			this->getBonusStat()->setEnduranceBonus(end - ((this->getItemLevel() * (this->getItemLevel())) + 100));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (end > 0)
+					this->getBonusStat()->setEnduranceBonus(end + (((this->getItemLevel() + (this->getItemLevel())) + i) + 15));
+				else if (end < 0)
+					this->getBonusStat()->setEnduranceBonus(end - (((this->getItemLevel() + (this->getItemLevel())) + i) + 15));
+			}
+		}
+	}
+}
