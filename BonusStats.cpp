@@ -47,3 +47,143 @@ BonusStats & BonusStats::operator=(BonusStats & other)
 	}
 	return *this;
 }
+
+void BonusStats::setDefenseBonus(int def)
+{
+	this->defenseBonus = def;
+}
+
+void BonusStats::setHealthBonus(int hp)
+{
+	this->healthBonus = hp;
+}
+
+void BonusStats::setManaBonus(int mp)
+{
+	this->manaBonus = mp;
+}
+
+void BonusStats::setStrengthBonus(int str)
+{
+	this->strengthBonus = str;
+}
+
+void BonusStats::setIntelligenceBonus(int intel)
+{
+	this->intelligenceBonus = intel;
+}
+
+void BonusStats::setEnduranceBonus(int end)
+{
+	this->enduranceBonus = end;
+}
+
+void BonusStats::setAttackPowerBonus(int ap)
+{
+	this->attackPowerBonus = ap;
+}
+
+void BonusStats::updateDefenseBonus(int def)
+{
+	this->defenseBonus += def;
+}
+
+void BonusStats::updateHealthBonus(int hp)
+{
+	this->healthBonus += hp;
+}
+
+void BonusStats::updateManaBonus(int mp)
+{
+	this->manaBonus += mp;
+}
+
+void BonusStats::updateStrengthBonus(int str)
+{
+	this->strengthBonus += str;
+}
+
+void BonusStats::updateIntelligenceBonus(int intel)
+{
+	this->intelligenceBonus += intel;
+}
+
+void BonusStats::updateEnduranceBonus(int end)
+{
+	this->enduranceBonus += end;
+}
+
+void BonusStats::updateAttackPowerBonus(int ap)
+{
+	this->attackPowerBonus += ap;
+}
+
+int BonusStats::getDefenseBonus() const
+{
+	return this->defenseBonus;
+}
+
+int BonusStats::getHealthBonus() const
+{
+	return this->healthBonus;
+}
+
+int BonusStats::getManaBonus() const
+{
+	return this->manaBonus;
+}
+
+int BonusStats::getStrengthBonus() const
+{
+	return this->strengthBonus;
+}
+
+int BonusStats::getIntelligenceBonus() const
+{
+	return this->intelligenceBonus;
+}
+
+int BonusStats::getEnduranceBonus() const
+{
+	return this->enduranceBonus;
+}
+
+int BonusStats::getAttackPowerBonus() const
+{
+	return this->attackPowerBonus;
+}
+
+int BonusStats::getOriginalDefenseBonus() const
+{
+	return this->originalDefenseBonus;
+}
+
+int BonusStats::getOriginalHealthBonus() const
+{
+	return this->originalHealthBonus;
+}
+
+int BonusStats::getOriginalManaBonus() const
+{
+	return this->originalManaBonus;
+}
+
+int BonusStats::getOriginalStrengthBonus() const
+{
+	return this->originalStrengthBonus;
+}
+
+int BonusStats::getOriginalIntelligenceBonus() const
+{
+	return this->originalIntelligenceBonus;
+}
+
+int BonusStats::getOriginalEnduranceBonus() const
+{
+	return this->originalEnduranceBonus;
+}
+
+int BonusStats::getOriginalAttackPowerBonus() const
+{
+	return this->originalAttackPowerBonus;
+}
