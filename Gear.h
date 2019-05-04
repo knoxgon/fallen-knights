@@ -67,6 +67,20 @@ public:
 	virtual void updateRequiredIntelligence(int intel);
 	virtual void updateRequiredEndurance(int end);
 
+	virtual std::string getRarity()const;
+	virtual NS_GearAttributes::Rarity ns_getRarity()const;
+
+	virtual void setGearName(std::string gearName);
+	virtual std::string getGearName()const;
+
+	virtual void setGearType(std::string gearType);
+	virtual std::string getGearType()const;
+
+	virtual int getItemLevel()const;
+
+	template<class __TFGEXP_____>
+	__TFGEXP_____ getGearName_ns() const;
+
 	virtual int getCurrentDurability()const;
 	virtual int getMaxDurability() const;
 	
@@ -84,15 +98,11 @@ public:
 
 	virtual std::string displaySimple()const;
 
-	virtual std::string getRarity()const;
-	virtual NS_GearAttributes::Rarity ns_getRarity()const;
-
-	virtual void setGearName(std::string gearName);
-	virtual std::string getGearName()const;
-
-	virtual void setGearType(std::string gearType);
-	virtual std::string getGearType()const;
-
-	virtual int getItemLevel()const;
-
+	virtual void retrieveGear()const;
 };
+
+template<class __TFGEXP_____>
+inline __TFGEXP_____ Gear::getGearName_ns() const
+{
+	return __TFGEXP_____();
+}
