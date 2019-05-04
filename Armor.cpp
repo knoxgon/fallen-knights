@@ -185,3 +185,20 @@ void Armor::setArmorType(NS_GearAttributes::ArmorType g_armorType)
 		break;
 	}
 }
+
+void Armor::setDefense(int def)
+{
+	if (this->getItemLevel() >= 0 && this->getItemLevel() <= 5)
+		this->defense = def + (this->getItemLevel() * 3);
+	if (this->getItemLevel() == 6)
+		this->defense = def + (this->getItemLevel() * 4);
+	if (this->getItemLevel() == 7)
+		this->defense = def + (this->getItemLevel() * 5);
+	if (this->getItemLevel() == 8)
+		this->defense = def + (this->getItemLevel() * 6);
+	if (this->getItemLevel() == 9)
+		this->defense = def + (this->getItemLevel() * 7);
+	if (this->getItemLevel() == 10)
+		this->defense = def + (this->getItemLevel() * 8);
+}
+
