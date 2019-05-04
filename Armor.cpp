@@ -269,3 +269,37 @@ void Armor::operateHealthBonus(int hp)
 		}
 	}
 }
+
+void Armor::operateManaBonus(int mp)
+{
+	if (this->getItemLevel() == 0)
+		this->getBonusStat()->setManaBonus(mp);
+	if (this->getItemLevel() == 8) {
+		if (mp > 0)
+			this->getBonusStat()->setManaBonus(mp + ((this->getItemLevel() * this->getItemLevel()) + 75));
+		else if (mp < 0)
+			this->getBonusStat()->setManaBonus(mp - ((this->getItemLevel() * this->getItemLevel()) + 75));
+	}
+	if (this->getItemLevel() == 9) {
+		if (mp > 0)
+			this->getBonusStat()->setManaBonus(mp + ((this->getItemLevel() * this->getItemLevel()) + 175));
+		else if (mp < 0)
+			this->getBonusStat()->setManaBonus(mp - ((this->getItemLevel() * this->getItemLevel()) + 175));
+	}
+	if (this->getItemLevel() == 10) {
+		if (mp > 0)
+			this->getBonusStat()->setManaBonus(mp + ((this->getItemLevel() * this->getItemLevel()) + 325));
+		else if (mp < 0)
+			this->getBonusStat()->setManaBonus(mp - ((this->getItemLevel() * this->getItemLevel()) + 325));
+	}
+	if (this->getItemLevel() >= 1 && this->getItemLevel() <= 7) {
+		for (int i = 1; i <= 7; i++) {
+			if (this->getItemLevel() == i) {
+				if (mp > 0)
+					this->getBonusStat()->setManaBonus(mp + ((this->getItemLevel() * this->getItemLevel()) + 50));
+				else if (mp < 0)
+					this->getBonusStat()->setManaBonus(mp - ((this->getItemLevel() * this->getItemLevel()) + 50));
+			}
+		}
+	}
+}
