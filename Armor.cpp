@@ -159,3 +159,29 @@ void Armor::setArmorName(NS_ArmorNames::Armor_Name g_armorName)
 bool Armor::operator==(const Armor& rhs) {
 	return this->g_armorName == rhs.g_armorName;
 }
+
+void Armor::setArmorType(NS_GearAttributes::ArmorType g_armorType)
+{
+	this->g_armorType = g_armorType;
+	switch (g_armorType)
+	{
+	case NS_GearAttributes::ArmorType::HELMET:
+		this->setGearType("Helmet");
+		break;
+	case NS_GearAttributes::ArmorType::PAULDRON:
+		this->setGearType("Pauldron");
+		break;
+	case NS_GearAttributes::ArmorType::PADS:
+		this->setGearType("Pad");
+		break;
+	case NS_GearAttributes::ArmorType::GAUNTLETS:
+		this->setGearType("Gauntlet");
+		break;
+	case NS_GearAttributes::ArmorType::BOOTS:
+		this->setGearType("Boot");
+		break;
+	case NS_GearAttributes::ArmorType::SHIELD:
+		this->setGearType("Shield");
+		break;
+	}
+}
