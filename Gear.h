@@ -44,4 +44,26 @@ public:
 		return this->g_rarity == gear.g_rarity
 			&& this->itemLevel == gear.itemLevel;
 	}
+
+	virtual BonusStats* getBonusStat()const;
+
+	virtual void setRarity(NS_GearAttributes::Rarity g_rarity);
+
+	virtual void setItemLevel(int itemLevel);
+	
+	virtual void setCurrentDurability(int dur);
+	virtual void setMaxDurability(int dur);
+	
+	virtual void setRequiredStrength(int str);
+	virtual void setRequiredIntelligence(int intel);
+	virtual void setRequiredEndurance(int end);
+
+	virtual void updateItemLevel(int itemLevel);
+	
+	virtual void updateCurrentDurability(int dur);
+	virtual void updateMaxDurability(int dur);
+	
+	virtual void updateRequiredStrength(int str);
+	virtual void updateRequiredIntelligence(int intel);
+	virtual void updateRequiredEndurance(int end);
 };
